@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Promo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="video-container">
+            <video id="promo-video" controls autoplay loop>
+                <source src="{{ url_for('static', filename='files/promo.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div id="file-upload-info"></div>
+    <form id="upload-form" method="POST" enctype="multipart/form-data" action="{{ url_for('main.index') }}">
+        <div class="upload-area" id="upload-area">
+            <p>Drag and drop images to upload them</p>
+            <div id="uploaded-images"></div>
+            <input class="file-input" id="file-input" type="file" name="files" multiple style="display: none;">
+        </div>
+        <input type="submit" id="submit-button" value="Start predict">
+        <input type="button" id="clear-button" value="Clear">
+    </form>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

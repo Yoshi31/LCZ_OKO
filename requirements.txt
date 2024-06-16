@@ -1,0 +1,6 @@
+torch
+Flask
+opencv-python
+Pillow
+flask_socketio
+ultralytics
